@@ -3,6 +3,8 @@ import "leaflet/dist/leaflet.css";
 import { memo, useContext } from "react";
 import { LocationContext } from "../../context/LocationContext";
 import LocationMarker from "./LocationMarker";
+import "leaflet-defaulticon-compatibility";
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 
 const Map = memo(function Map() {
   const { geoLocation } = useContext(LocationContext);
