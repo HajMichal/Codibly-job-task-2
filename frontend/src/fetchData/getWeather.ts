@@ -19,5 +19,5 @@ export const getWeather = async ({
   lat,
   lng,
 }: GetWeatherProps): Promise<{ data: GetWeatherResponse[] }> => {
-  return await axiosBase.get(`http://localhost:3000/?lat=${lat}&lng=${lng}`);
+  return await axiosBase.get(`/?lat=${lat}&lng=${lng}`);
 };
