@@ -6,7 +6,6 @@
 ## Note:
 My job was to create single page app using my own with third party API to display weather forecast for next 7 days. Application should estimate the projected energy production from the photovoltaic installation based on data I get from open-meteo API.
     
-## Frontend:
-
-## Backend:
-
+## [Frontend](frontend/README.md) 
+                                  
+## [Backend](backend/README.md) 
