@@ -1,5 +1,5 @@
 import { HttpException, Injectable } from '@nestjs/common';
-import { GetWeatherWIthEnergyDto } from './app.dto/getWeatherWIthEnergy.dto';
+import { GetWeatherWithEnergyDto } from './app.dto/getWeatherWIthEnergy.dto';
 import { HttpService } from '@nestjs/axios';
 import { catchError, map } from 'rxjs/operators';
 
@@ -9,7 +9,7 @@ const PANEL_EFFECTIVENESS = 0.2;
 @Injectable()
 export class AppService {
   constructor(private readonly httpService: HttpService) {}
-  getWeatherWithEnergy(query: GetWeatherWIthEnergyDto) {
+  getWeatherWithEnergy(query: GetWeatherWithEnergyDto) {
     return this.getWeather(query).pipe(
       map((response) => {
         const dataToReturn = [];
@@ -51,7 +51,7 @@ export class AppService {
     );
   }
 
-  getWeather(query: GetWeatherWIthEnergyDto) {
+  getWeather(query: GetWeatherWithEnergyDto) {
     try {
       return this.httpService.get(
         `https://api.open-meteo.com/v1/forecast?latitude=${query.lat}&longitude=${query.lng}&daily=weather_code,temperature_2m_max,temperature_2m_min,sunshine_duration&timezone=auto`,

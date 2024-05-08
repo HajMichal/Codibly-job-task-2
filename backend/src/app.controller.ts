@@ -1,6 +1,6 @@
 import { Controller, Get, Query, ValidationPipe } from '@nestjs/common';
 import { AppService } from './app.service';
-import { GetWeatherWIthEnergyDto } from './app.dto/getWeatherWIthEnergy.dto';
+import { GetWeatherWithEnergyDto } from './app.dto/getWeatherWIthEnergy.dto';
 
 @Controller()
 export class AppController {
@@ -9,7 +9,7 @@ export class AppController {
   @Get()
   getWeatherWithEnergy(
     @Query(new ValidationPipe({ transform: true }))
-    query: GetWeatherWIthEnergyDto,
+    query: GetWeatherWithEnergyDto,
   ) {
     return this.appService.getWeatherWithEnergy(query);
   }

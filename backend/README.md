@@ -19,7 +19,7 @@
   * check the correctness of data types,
   * check if values are latitude and longitude 
 * error handling from third party API
-* unit tests
+* tests
 
 
 ## Stack:
@@ -32,3 +32,23 @@
 
 ## Note:
 I have tried to follow all best practices from nestjs documentation
+
+<br />
+
+### Run app locally
+```shell
+$ npm run start
+
+or 
+
+$ npm run start:dev
+```
+### Run unit test cases
+```shell
+$ npm run test
+```
+
+### Run e2e test cases
+```shell
+$ npm run test:e2e
+```
