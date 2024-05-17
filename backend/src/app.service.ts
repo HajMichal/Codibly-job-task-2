@@ -26,7 +26,7 @@ export class AppService {
 
   getWeather({ lat, lng }: GetWeatherWithEnergyDto) {
     return this.baseHttpService(
-      `latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min,sunshine_duration&timezone=auto`,
+      `forecast?latitude=${lat}&longitude=${lng}&daily=weather_code,temperature_2m_max,temperature_2m_min,sunshine_duration&timezone=auto`,
     );
   }
 
@@ -40,11 +40,10 @@ export class AppService {
 
     return dataToReturn;
   }
-
-  private baseHttpService(urlQueryParams: string) {
+  private baseHttpService(queryParamsUrl: string) {
     try {
       return this.httpService.get(
-        `https://api.open-meteo.com/v1/forecast$?${urlQueryParams}`,
+        `https://api.open-meteo.com/v1/${queryParamsUrl}`,
       );
     } catch (error) {
       throw error;
